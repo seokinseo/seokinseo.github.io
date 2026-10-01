@@ -219,10 +219,10 @@ footer .copy{margin-top:14px;color:var(--faint);font-size:12.5px}
   .ri-ic{grid-row:span 2;margin:2px 0 0}
   .ri-t{font-size:14.5px;margin-bottom:2px}
   .ri-d{font-size:13px}
-  /* filters: single scrollable row */
-  .filters{flex-wrap:nowrap;overflow-x:auto;margin:0 -18px;padding:2px 18px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .filters::-webkit-scrollbar{display:none}
-  .filters button{flex:none}
+  /* filters: two-column vertical list */
+  .filters{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .filters button{width:100%;justify-content:flex-start;text-align:left;padding:6px 11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .filters button[data-f="all"]{justify-content:center;text-align:center}
   /* publications */
   .year{top:52px;font-size:16px;padding:7px 0 5px}
   .pub{padding:12px 0}
