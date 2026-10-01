@@ -200,14 +200,17 @@ footer .copy{margin-top:14px;color:var(--faint);font-size:12.5px}
   .photo,.photo-fallback{width:200px;border-radius:20px;box-shadow:0 4px 18px rgba(0,0,0,.08)}
   .hero-grid>:last-child{text-align:center}
   h1{font-size:27px;margin-bottom:2px}
-  h1 .ko{display:block;margin:4px 0 0;font-size:15px}
+  h1 .ko{font-size:16px;margin-left:6px}
   .role{margin-top:8px;font-size:15px}
   .affil{font-size:14px;line-height:1.55;margin-bottom:16px}
   .bio{text-align:left;font-size:14.5px;line-height:1.7}
   .emails{justify-content:center;gap:4px 16px}
   .email{font-size:13px}
-  .links{justify-content:center;gap:6px}
-  .btn{padding:6px 11px;font-size:13px}
+  .hero-grid>*{min-width:0}
+  .links{justify-content:center;flex-wrap:nowrap;gap:5px}
+  .btn{flex:0 1 auto;min-width:0;padding:6px 8px;font-size:12.5px;gap:5px;white-space:nowrap}
+  .btn svg{width:14px;height:14px;flex:none}
+  .gs-pre{display:none}
   section{padding:24px 0}
   h2{font-size:21px;margin-bottom:14px}
   h3{font-size:11.5px;letter-spacing:.06em;margin:22px 0 8px}
@@ -293,7 +296,7 @@ footer .copy{margin-top:14px;color:var(--faint);font-size:12.5px}
           <a class="btn" href="https://www.linkedin.com/in/seokin-seo-026ab4150" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
           <a class="btn" href="https://scholar.google.com/citations?hl=en&amp;user=CJnVq-UAAAAJ" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.84 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.16 4.44L24 9.5z"/></svg>Google Scholar</a>
+            <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.84 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.16 4.44L24 9.5z"/></svg><span class="gs-pre">Google </span>Scholar</a>
         </div>
       </div>
     </div>
