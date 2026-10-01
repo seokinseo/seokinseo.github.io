@@ -517,7 +517,7 @@ footer .copy{margin-top:14px;color:var(--faint);font-size:12.5px}
     <div class="year-group">
       <div class="year">2022</div>
       <div class="year-items">
-        <article class="pub" data-k="causal sel">
+        <article class="pub" data-k="causal">
           <div>
             <div class="pub-title"><a href="https://ailab.kaist.ac.kr/papers/pdfs/KCC2022-1.pdf" target="_blank" rel="noopener">Improving Causally-Regularized Logistic Regression via Confounder Balancing with Feature Combinations</a></div>
             <div class="authors" lang="ko">특징조합 교란자 균형을 통한 인과정규화된 로지스틱 회귀 개선</div>
@@ -627,6 +627,11 @@ footer .copy{margin-top:14px;color:var(--faint);font-size:12.5px}
     });
     document.querySelectorAll('.year-group').forEach(function(g){
       g.classList.toggle('hidden', !g.querySelector('.pub:not(.hidden)'));
+    });
+    document.querySelectorAll('#publications h3').forEach(function(h){
+      var any=false, n=h.nextElementSibling;
+      while(n && n.tagName!=='H3'){ if(n.classList.contains('year-group') && !n.classList.contains('hidden')) any=true; n=n.nextElementSibling; }
+      h.style.display=any?'':'none';
     });
   }
   btns.forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.f)})});
