@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seokin Seo</title>
+<meta name="description" content="Seokin Seo, Postdoctoral Researcher at KIST Advanced Robot Control Lab. Reinforcement learning, imitation learning, and physical AI.">
+<meta name="author" content="Seokin Seo">
+<meta property="og:title" content="Seokin Seo">
+<meta property="og:description" content="Postdoctoral Researcher, KIST. Reinforcement learning, imitation learning, and physical AI.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231f3a5f'/><text x='50%' y='54%' font-family='Georgia,serif' font-size='30' fill='white' text-anchor='middle' dominant-baseline='middle'>SS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f7f8fa; --text:#1b1f24; --muted:#5b6470; --faint:#8a929c;
+  --line:#e6e8eb; --accent:#1f4e8c; --accent-soft:#e8eff8; --hl:#b4401f;
+  --oral:#8a2be2; --oral-soft:#f3eafd; --spot:#a8590a; --spot-soft:#fdf1e3;
+  --award:#c62828;--award-soft:#fde4e4;--gold:#9a6b00;--gold-soft:#fdf3d6;
+  --maxw:880px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1216; --surface:#171b21; --text:#e6e8eb; --muted:#a3abb5; --faint:#78818c;
+    --line:#262c34; --accent:#7fb0ff; --accent-soft:#1a2738; --hl:#ff9a73;
+    --award:#ff8a80;--award-soft:#3d1a1a;--gold:#f5c84c;--gold-soft:#3a2f10;--oral:#c89bff; --oral-soft:#2a1f3a; --spot:#f2b766; --spot-soft:#33270f;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1216; --surface:#171b21; --text:#e6e8eb; --muted:#a3abb5; --faint:#78818c;
+  --line:#262c34; --accent:#7fb0ff; --accent-soft:#1a2738; --hl:#ff9a73;
+  --award:#ff8a80;--award-soft:#3d1a1a;--gold:#f5c84c;--gold-soft:#3a2f10;--oral:#c89bff; --oral-soft:#2a1f3a; --spot:#f2b766; --spot-soft:#33270f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:15.5px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.brand{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:18px;color:var(--text)}
+.brand:hover{text-decoration:none}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{color:var(--muted);font-size:14px;font-weight:500}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+#theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;width:32px;height:32px;cursor:pointer;display:grid;place-items:center}
+#theme:hover{color:var(--text)}
+@media (max-width:640px){.nav-links a{display:none}}
+
+/* hero */
+header.hero{padding:56px 0 28px}
+.hero-grid{display:grid;grid-template-columns:1fr 180px;gap:40px;align-items:start}
+.hero-grid>:first-child{order:2}
+.photo{width:180px;height:180px;border-radius:14px;object-fit:cover;background:var(--surface);border:1px solid var(--line)}
+.photo-fallback{width:180px;height:180px;border-radius:14px;background:var(--accent-soft);color:var(--accent);display:none;place-items:center;font:600 54px "Source Serif 4",Georgia,serif;border:1px solid var(--line)}
+h1{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:34px;line-height:1.2;margin:0 0 4px;letter-spacing:-.01em}
+h1 .ko{font-size:20px;color:var(--faint);font-weight:500;margin-left:8px}
+.role{font-size:16px;color:var(--text);margin:6px 0 2px;font-weight:500}
+.affil{color:var(--muted);margin:0 0 14px}
+.bio{margin:0 0 16px;color:var(--text)}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;color:var(--text);font-size:13.5px;font-weight:600;background:var(--bg)}
+.btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btn svg{width:15px;height:15px;fill:currentColor}
+.emails{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0 0 14px}
+.email{display:inline-flex;align-items:center;gap:7px;font:500 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--text)}
+.email:hover{color:var(--accent);text-decoration:none}
+.email svg{width:16px;height:16px;fill:var(--muted)}
+@media (max-width:640px){
+  .hero-grid{grid-template-columns:1fr;gap:20px}
+  .hero-grid>:first-child{order:0}
+  .photo,.photo-fallback{width:128px;height:128px}
+  h1{font-size:28px}
+}
+
+/* sections */
+section{padding:28px 0;border-top:1px solid var(--line)}
+h2{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:22px;margin:0 0 18px;letter-spacing:-.005em}
+h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);margin:26px 0 12px}
+.ri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ri{position:relative;padding:18px 18px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.ri::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--kf)}
+.ri-ic{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:var(--kb);margin-bottom:12px}
+.ri-ic svg{width:20px;height:20px;color:var(--kf)}
+.ri-t{font-weight:600;font-size:15px;margin-bottom:4px}
+.ri-d{font-size:13.5px;line-height:1.55;color:var(--muted)}
+@media (max-width:720px){.ri-grid{grid-template-columns:1fr}}
+
+/* publications */
+.pub-head{margin-bottom:10px}
+.pub-head h2{margin:0}
+.filters{display:flex;flex-wrap:wrap;gap:6px}
+.filters button{font:500 12.5px Inter,sans-serif;padding:4px 11px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--muted);cursor:pointer}
+.filters button.fsel{display:inline-flex;align-items:center;gap:5px}
+.filters button.fsel svg{width:12px;height:12px;fill:var(--gold)}
+.filters button.fsel[aria-pressed="true"] svg{fill:var(--bg)}
+.filters button.fk{display:inline-flex;align-items:center;gap:6px}
+.filters button.fk::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--kf)}
+.filters button.fk[aria-pressed="true"]::before{background:var(--bg)}
+.filters button[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.filters button.fk[aria-pressed="true"]{background:var(--kf);color:var(--bg);border-color:var(--kf)}
+.note{font-size:12.5px;color:var(--faint);margin:10px 0 6px}
+.kw-il{--kf:#1d4ed8;--kb:#e0e9ff}
+.kw-rl{--kf:#047857;--kb:#dcf5ea}
+.kw-nlp{--kf:#7c3aed;--kb:#efe7ff}
+.kw-robust{--kf:#4d7c0f;--kb:#ecf5d9}
+.kw-causal{--kf:#0e7490;--kb:#dcf3f8}
+.kw-mv{--kf:#4d5bb5;--kb:#e6e9fa}
+.kw-diff{--kf:#be185d;--kb:#fde4ef}
+.kw-safety{--kf:#b91c1c;--kb:#fde3e3}
+.kw-pai{--kf:#ea580c;--kb:#ffedd5}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]) .kw-il{--kf:#93b4ff;--kb:#1b2a4a}
+:root:not([data-theme="light"]) .kw-rl{--kf:#6ee7b7;--kb:#123528}
+:root:not([data-theme="light"]) .kw-nlp{--kf:#c4a5ff;--kb:#2b1f47}
+:root:not([data-theme="light"]) .kw-robust{--kf:#a3e635;--kb:#25310f}
+:root:not([data-theme="light"]) .kw-causal{--kf:#67d8ee;--kb:#0f3039}
+:root:not([data-theme="light"]) .kw-mv{--kf:#a5b0ff;--kb:#232a4d}
+:root:not([data-theme="light"]) .kw-diff{--kf:#f9a8d4;--kb:#3d1a2b}
+:root:not([data-theme="light"]) .kw-safety{--kf:#fca5a5;--kb:#3d1717}
+:root:not([data-theme="light"]) .kw-pai{--kf:#fb923c;--kb:#3b2312}
+}
+:root[data-theme="dark"] .kw-il{--kf:#93b4ff;--kb:#1b2a4a}
+:root[data-theme="dark"] .kw-rl{--kf:#6ee7b7;--kb:#123528}
+:root[data-theme="dark"] .kw-nlp{--kf:#c4a5ff;--kb:#2b1f47}
+:root[data-theme="dark"] .kw-robust{--kf:#a3e635;--kb:#25310f}
+:root[data-theme="dark"] .kw-causal{--kf:#67d8ee;--kb:#0f3039}
+:root[data-theme="dark"] .kw-mv{--kf:#a5b0ff;--kb:#232a4d}
+:root[data-theme="dark"] .kw-diff{--kf:#f9a8d4;--kb:#3d1a2b}
+:root[data-theme="dark"] .kw-safety{--kf:#fca5a5;--kb:#3d1717}
+:root[data-theme="dark"] .kw-pai{--kf:#fb923c;--kb:#3b2312}
+.year-group{display:grid;grid-template-columns:72px 1fr;gap:12px;border-top:1px solid var(--line)}
+.year-group:first-of-type{border-top:0}
+.year{position:sticky;top:64px;align-self:start;padding:14px 0;font:600 20px "Source Serif 4",Georgia,serif;color:var(--faint);font-variant-numeric:tabular-nums}
+.pub{display:block;padding:14px 0;border-bottom:1px dashed var(--line)}
+.year-items .pub:last-child{border-bottom:0}
+.kws{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px}
+.kw{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font:500 12.5px/1.4 Inter,sans-serif;padding:0;border:0;background:none;color:var(--muted);cursor:pointer}
+.kw::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--kf);flex:none}
+.kw:hover{color:var(--kf)}
+.pub-title{font-weight:600;font-size:15.5px;line-height:1.45;color:var(--text)}
+.new{display:inline-block;vertical-align:2px;margin-left:4px;padding:1px 7px;border-radius:5px;font:700 10.5px/1.5 Inter,sans-serif;letter-spacing:.06em;color:var(--bg);background:var(--award)}
+.party{font-size:15px}
+.pub-title a{color:var(--text)}
+.pub-title a:hover{color:var(--accent)}
+.authors{color:var(--muted);font-size:14px;margin-top:3px}
+.authors .me{color:var(--text);font-weight:600;text-decoration:underline;text-decoration-color:var(--hl);text-decoration-thickness:2px;text-underline-offset:3px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px;font-size:13px}
+.meta .full{color:var(--text);font-style:italic}
+.award{font-size:11.5px;font-weight:600;padding:1px 8px;border-radius:999px}
+.award.oral{background:var(--award-soft);color:var(--award)}
+.award.spot{background:var(--award-soft);color:var(--award)}
+.award.soon{background:var(--surface);color:var(--muted);border:1px solid var(--line)}
+.award.prize{background:var(--award-soft);color:var(--award)}
+.plinks{display:inline-flex;gap:6px}
+.plinks a{font-size:12.5px;font-weight:500;padding:1px 8px;border:1px solid var(--line);border-radius:6px;color:var(--muted)}
+.plinks a:hover{color:var(--accent);border-color:var(--accent);text-decoration:none}
+.pub.hidden,.year-group.hidden{display:none}
+@media (max-width:640px){
+  .year-group{grid-template-columns:1fr;gap:0}
+  .year{top:56px;z-index:2;background:var(--bg);padding:8px 0 4px;font-size:17px;border-bottom:1px solid var(--line)}
+}
+
+/* timeline lists */
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:9px 0}
+.tl .when{color:var(--faint);font-size:13.5px;font-variant-numeric:tabular-nums;padding-top:1px}
+.tl .what b{font-weight:600}
+.tl .sub{color:var(--muted);font-size:14px}
+@media (max-width:640px){.tl li{grid-template-columns:1fr;gap:0}}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media (max-width:720px){.two{grid-template-columns:1fr;gap:0}}
+.plain{list-style:none;margin:0;padding:0}
+.plain li{padding:6px 0;border-bottom:1px solid var(--line);font-size:14.5px;display:flex;justify-content:space-between;gap:12px}
+.plain li:last-child{border-bottom:0}
+.plain .yr{color:var(--faint);font-size:13.5px;white-space:nowrap;text-align:right}
+.plain small{color:var(--muted);font-size:13px}
+.gold{display:inline-flex;align-items:center;gap:4px;margin-left:6px;padding:1px 8px 1px 6px;border-radius:999px;font-size:11.5px;font-weight:600;color:var(--gold);background:var(--gold-soft);border:1px solid color-mix(in srgb,var(--gold) 30%,transparent);vertical-align:1px}
+.gold svg{width:11px;height:11px;fill:currentColor}
+.plain .yr{display:inline-flex;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);padding:28px 0 44px;color:var(--muted);font-size:13.5px}
+footer .addr{line-height:1.6}
+footer .copy{margin-top:14px;color:var(--faint);font-size:12.5px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Seokin Seo</a>
+    <div class="nav-links">
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
+      <a href="#service">Service</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" aria-label="Toggle color theme" title="Toggle theme">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="hero">
+    <div class="hero-grid">
+      <div>
+        <img class="photo" src="assets/profile.jpg" alt="Seokin Seo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+        <div class="photo-fallback" aria-hidden="true">SS</div>
+      </div>
+      <div>
+        <h1>Seokin Seo<span class="ko">서석인</span></h1>
+        <p class="role">Postdoctoral Researcher</p>
+        <p class="affil">
+          <a href="https://sites.google.com/view/kist-arc/home">Advanced Robot Control Lab</a>,
+          Center for Humanoid Research, Korea Institute of Science and Technology (KIST)
+        </p>
+        <p class="bio">
+          I am a postdoctoral researcher at KIST working with
+          <a href="https://sites.google.com/view/kist-arc/home/people/pi-profile">Dr. Yisoo Lee</a> (since March 2026).
+          I received my Ph.D. from the Kim Jaechul Graduate School of AI at KAIST, co-advised by
+          <a href="https://ailab.kaist.ac.kr/people/kekim">Prof. Kee-Eung Kim</a> and
+          <a href="https://sites.google.com/view/hongseokyang/home">Prof. Hongseok Yang</a>.
+          My research focuses on learning robust decision-making policies from data, with
+          applications to humanoid robot learning and control.
+        </p>
+        <div class="emails">
+          <a class="email" href="mailto:seokin.seo@kist.re.kr">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 4h17A1.5 1.5 0 0 1 22 5.5v.6l-10 6.6L2 6.1v-.6A1.5 1.5 0 0 1 3.5 4z"/><path d="M2 8.5l10 6.6 10-6.6v10A1.5 1.5 0 0 1 20.5 20h-17A1.5 1.5 0 0 1 2 18.5z"/></svg>seokin.seo@kist.re.kr</a>
+          <a class="email" href="mailto:seokinseo11@gmail.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 4h17A1.5 1.5 0 0 1 22 5.5v.6l-10 6.6L2 6.1v-.6A1.5 1.5 0 0 1 3.5 4z"/><path d="M2 8.5l10 6.6 10-6.6v10A1.5 1.5 0 0 1 20.5 20h-17A1.5 1.5 0 0 1 2 18.5z"/></svg>seokinseo11@gmail.com</a>
+        </div>
+        <div class="links">
+          <a class="btn" href="https://drive.google.com/file/d/1RurrC-noCBZGBDHLpn7dg1WvtzEChG5x" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm-1 7V3.5L18.5 9zM8 13h8v2H8zm0 4h8v2H8z"/></svg>CV</a>
+          <a class="btn" href="https://github.com/tzs930" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/seokin-seo-026ab4150" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+          <a class="btn" href="https://scholar.google.com/citations?hl=en&amp;user=CJnVq-UAAAAJ" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.84 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.16 4.44L24 9.5z"/></svg>Google Scholar</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="education">
+    <h2>Education</h2>
+    <ul class="tl">
+      <li>
+        <div class="when">2026</div>
+        <div class="what"><b>Ph.D.</b>, Kim Jaechul Graduate School of AI, KAIST
+          <div class="sub">Dissertation: <i>Robust Imitation Learning under Data Collection Biases</i><br>Advisors: Kee-Eung Kim and Hongseok Yang</div>
+        </div>
+      </li>
+      <li>
+        <div class="when">2019</div>
+        <div class="what"><b>M.S.</b>, School of Computing, KAIST
+          <div class="sub">Thesis: <i>A Study on Generating Explanations for Reinforcement Learning Policies in Control Tasks</i><br>Advisor: Kee-Eung Kim</div>
+        </div>
+      </li>
+      <li>
+        <div class="when">2017</div>
+        <div class="what"><b>B.S.</b>, Computer Science &amp; Mathematics, Sogang University</div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="interests">
+    <h2>Research Interests</h2>
+    <div class="ri-grid">
+      <div class="ri kw-rl">
+        <div class="ri-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-13.7 5.7"/><path d="M4 12a8 8 0 0 1 13.7-5.7"/><path d="M18 3v4h-4"/><path d="M6 21v-4h4"/><circle cx="12" cy="12" r="2.2" fill="currentColor" stroke="none"/></svg></div>
+        <div class="ri-t">Reinforcement Learning</div>
+        <div class="ri-d">Robust and safe sequential decision-making via learning</div>
+      </div>
+      <div class="ri kw-il">
+        <div class="ri-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="3" stroke-dasharray="2 2"/><path d="M2 20c0-3.4 2.7-6 6-6" stroke-dasharray="2 2"/><circle cx="16" cy="8" r="3.2"/><path d="M9.5 21c0-3.6 2.9-6.3 6.5-6.3s6.5 2.7 6.5 6.3"/></svg></div>
+        <div class="ri-t">Imitation Learning</div>
+        <div class="ri-d">Offline imitation learning, robustness to covariate shift and data collection biases</div>
+      </div>
+      <div class="ri kw-pai">
+        <div class="ri-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="10" rx="3"/><path d="M12 8V5.5"/><circle cx="12" cy="4" r="1.3"/><circle cx="9.5" cy="12.8" r="1.2" fill="currentColor" stroke="none"/><circle cx="14.5" cy="12.8" r="1.2" fill="currentColor" stroke="none"/><path d="M2.5 11.5v3.5M21.5 11.5v3.5M9 18v3M15 18v3"/></svg></div>
+        <div class="ri-t">Physical AI</div>
+        <div class="ri-d">Learning-based control for physical robots (e.g., humanoids, manipulators, mobile robots)</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="pub-head">
+      <h2>Publications</h2>
+    </div>
+    <div class="filters" role="group" aria-label="Filter publications">
+        <button data-f="all" aria-pressed="true">All</button>
+        <button data-f="sel" aria-pressed="false" class="fsel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5-4.8-4.6 6.6-.9z"/></svg>Selected</button>
+        <button data-f="il" aria-pressed="false" class="fk kw-il">Imitation Learning</button>
+        <button data-f="rl" aria-pressed="false" class="fk kw-rl">Reinforcement Learning</button>
+        <button data-f="nlp" aria-pressed="false" class="fk kw-nlp">Natural Language</button>
+        <button data-f="robust" aria-pressed="false" class="fk kw-robust">Robust Learning</button>
+        <button data-f="causal" aria-pressed="false" class="fk kw-causal">Causal Learning</button>
+        <button data-f="mv" aria-pressed="false" class="fk kw-mv">Representation Learning</button>
+        <button data-f="diff" aria-pressed="false" class="fk kw-diff">Diffusion Model</button>
+        <button data-f="safety" aria-pressed="false" class="fk kw-safety">Safety</button>
+    </div>
+    <p class="note">* equal contribution, &dagger; equal advising. Click a keyword to filter.</p>
+
+    <h3>International Conferences &amp; Preprints</h3>
+    <div class="year-group">
+      <div class="year">2026</div>
+      <div class="year-items">
+        <article class="pub" data-k="il safety sel">
+          <div>
+            <div class="pub-title">DexDICE: Reconciling Safety and Performance via Dual-Expert Offline Imitation Learning <span class="new">NEW</span> <span class="party" aria-hidden="true">🎉</span></div>
+            <div class="authors"><span class="me">Seokin Seo</span>, Sung Kuk Shyn, Minji Seo, Yisoo Lee&dagger;, Jongmin Lee&dagger;, Hongseok Yang&dagger;, Kee-Eung Kim&dagger;</div>
+            <div class="meta">
+              <span class="full">Neural Information Processing Systems (NeurIPS), 2026</span>
+              <span class="award soon">To appear</span>
+            </div>
+            <div class="kws"><button class="kw kw-il" data-f="il" type="button">Imitation Learning</button><button class="kw kw-safety" data-f="safety" type="button">Safety</button></div>
+          </div>
+        </article>
+        <article class="pub" data-k="diff safety">
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/2606.29801">Concept Removal Guidance: Evidence-Calibrated Negative Guidance for Safe Diffusion Sampling</a></div>
+            <div class="authors">Yoonseok Choi, Chaeyoung Oh, Hyunjun Choi, <span class="me">Seokin Seo</span>, Kee-Eung Kim</div>
+            <div class="meta">
+              <span class="full">International Conference on Machine Learning (ICML), 2026</span>
+              <span class="award spot">Spotlight</span>
+              <span class="plinks"><a href="https://arxiv.org/pdf/2606.29801">PDF</a></span>
+            </div>
+            <div class="kws"><button class="kw kw-diff" data-f="diff" type="button">Diffusion Model</button><button class="kw kw-safety" data-f="safety" type="button">Safety</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="year-group">
+      <div class="year">2025</div>
+      <div class="year-items">
+        <article class="pub" data-k="rl nlp">
+          <div>
+            <div class="pub-title"><a href="https://aclanthology.org/2025.naacl-long.369/">Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions</a></div>
+            <div class="authors">Joo Bon Maeng*, Seongmin Lee*, <span class="me">Seokin Seo</span>, Kee-Eung Kim</div>
+            <div class="meta">
+              <span class="full">Annual Conference of the Nations of the Americas Chapter of the ACL (NAACL), 2025</span>
+              <span class="plinks"><a href="https://aclanthology.org/2025.naacl-long.369/">Paper</a></span>
+            </div>
+            <div class="kws"><button class="kw kw-rl" data-f="rl" type="button">Reinforcement Learning</button><button class="kw kw-nlp" data-f="nlp" type="button">Natural Language</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="year-group">
+      <div class="year">2024</div>
+      <div class="year-items">
+        <article class="pub" data-k="il robust sel">
+          <div>
+            <div class="pub-title"><a href="https://openreview.net/forum?id=lHcvjsQFQq">Mitigating Covariate Shift in Behavioral Cloning via Robust Stationary Distribution Correction</a></div>
+            <div class="authors"><span class="me">Seokin Seo</span>, Byung-Jun Lee, Jongmin Lee, HyeongJoo Hwang, Hongseok Yang, Kee-Eung Kim</div>
+            <div class="meta">
+              <span class="full">Neural Information Processing Systems (NeurIPS), 2024</span>
+              <span class="plinks"><a href="https://openreview.net/pdf?id=lHcvjsQFQq">PDF</a></span>
+            </div>
+            <div class="kws"><button class="kw kw-il" data-f="il" type="button">Imitation Learning</button><button class="kw kw-robust" data-f="robust" type="button">Robust Learning</button></div>
+          </div>
+        </article>
+        <article class="pub" data-k="rl nlp">
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/2409.19382">Zero-Shot Multi-Hop Question Answering via Monte-Carlo Tree Search with Large Language Models</a></div>
+            <div class="authors">Seongmin Lee*, Jaewook Shin*, Youngjin Ahn, <span class="me">Seokin Seo</span>, Ohjoon Kwon, Kee-Eung Kim</div>
+            <div class="meta">
+              <span class="full">arXiv:2409.19382</span>
+              <span class="plinks"><a href="https://arxiv.org/pdf/2409.19382">PDF</a></span>
+            </div>
+            <div class="kws"><button class="kw kw-rl" data-f="rl" type="button">Reinforcement Learning</button><button class="kw kw-nlp" data-f="nlp" type="button">Natural Language</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="year-group">
+      <div class="year">2023</div>
+      <div class="year-items">
+        <article class="pub" data-k="il causal sel">
+          <div>
+            <div class="pub-title"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/06b71ad997f7e3e4b2e2f2ea12e5a759-Paper-Conference.pdf">Regularized Behavior Cloning for Blocking the Leakage of Past Action Information</a></div>
+            <div class="authors"><span class="me">Seokin Seo</span>, HyeongJoo Hwang, Hongseok Yang, Kee-Eung Kim</div>
+            <div class="meta">
+              <span class="full">Neural Information Processing Systems (NeurIPS), 2023</span>
+              <span class="award spot">Spotlight</span>
+              <span class="plinks"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/06b71ad997f7e3e4b2e2f2ea12e5a759-Paper-Conference.pdf">PDF</a></span>
+            </div>
+            <div class="kws"><button class="kw kw-il" data-f="il" type="button">Imitation Learning</button><button class="kw kw-causal" data-f="causal" type="button">Causal Learning</button></div>
+          </div>
+        </article>
+        <article class="pub" data-k="rl mv sel">
+          <div>
+            <div class="pub-title"><a href="https://openreview.net/forum?id=jwy77xkyPt">Information-Theoretic State Space Model for Multi-View Reinforcement Learning</a></div>
+            <div class="authors">HyeongJoo Hwang, <span class="me">Seokin Seo</span>, Youngsoo Jang, Sungyoon Kim, Geon-Hyeong Kim, Seunghoon Hong, Kee-Eung Kim</div>
+            <div class="meta">
+              <span class="full">International Conference on Machine Learning (ICML), 2023</span>
+              <span class="award oral">Oral</span>
+              <span class="plinks"><a href="https://openreview.net/pdf?id=jwy77xkyPt">PDF</a></span>
+            </div>
+            <div class="kws"><button class="kw kw-rl" data-f="rl" type="button">Reinforcement Learning</button><button class="kw kw-mv" data-f="mv" type="button">Representation Learning</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="year-group">
+      <div class="year">2022</div>
+      <div class="year-items">
+        <article class="pub" data-k="il sel">
+          <div>
+            <div class="pub-title"><a href="https://openreview.net/forum?id=BrPdX1bDZkQ">DemoDICE: Offline Imitation Learning with Supplementary Imperfect Demonstrations</a></div>
+            <div class="authors">Geon-Hyeong Kim, <span class="me">Seokin Seo</span>, Jongmin Lee, Wonseok Jeon, HyeongJoo Hwang, Hongseok Yang, Kee-Eung Kim</div>
+            <div class="meta">
+              <span class="full">International Conference on Learning Representations (ICLR), 2022</span>
+              <span class="plinks"><a href="https://openreview.net/pdf?id=BrPdX1bDZkQ">PDF</a></span>
+            </div>
+            <div class="kws"><button class="kw kw-il" data-f="il" type="button">Imitation Learning</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="year-group">
+      <div class="year">2021</div>
+      <div class="year-items">
+        <article class="pub" data-k="rl nlp">
+          <div>
+            <div class="pub-title"><a href="https://openreview.net/forum?id=7_G8JySGecm">Monte-Carlo Planning and Learning with Language Action Value Estimates</a></div>
+            <div class="authors">Youngsoo Jang, <span class="me">Seokin Seo</span>, Jongmin Lee, Kee-Eung Kim</div>
+            <div class="meta">
+              <span class="full">International Conference on Learning Representations (ICLR), 2021</span>
+              <span class="plinks"><a href="https://openreview.net/pdf?id=7_G8JySGecm">PDF</a></span>
+            </div>
+            <div class="kws"><button class="kw kw-rl" data-f="rl" type="button">Reinforcement Learning</button><button class="kw kw-nlp" data-f="nlp" type="button">Natural Language</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="year-group">
+      <div class="year">2018</div>
+      <div class="year-items">
+        <article class="pub" data-k="il">
+          <div>
+            <div class="pub-title"><a href="https://proceedings.neurips.cc/paper_files/paper/2018/file/943aa0fcda4ee2901a7de9321663b114-Paper.pdf">A Bayesian Approach to Generative Adversarial Imitation Learning</a></div>
+            <div class="authors">Wonseok Jeon, <span class="me">Seokin Seo</span>, Kee-Eung Kim</div>
+            <div class="meta">
+              <span class="full">Neural Information Processing Systems (NeurIPS), 2018</span>
+              <span class="award spot">Spotlight</span>
+              <span class="plinks"><a href="https://proceedings.neurips.cc/paper_files/paper/2018/file/943aa0fcda4ee2901a7de9321663b114-Paper.pdf">PDF</a></span>
+            </div>
+            <div class="kws"><button class="kw kw-il" data-f="il" type="button">Imitation Learning</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <h3>Domestic Conferences</h3>
+    <div class="year-group">
+      <div class="year">2022</div>
+      <div class="year-items">
+        <article class="pub" data-k="causal sel">
+          <div>
+            <div class="pub-title"><a href="https://ailab.kaist.ac.kr/papers/pdfs/KCC2022-1.pdf">Improving Causally-Regularized Logistic Regression via Confounder Balancing with Feature Combinations</a></div>
+            <div class="authors" lang="ko">특징조합 교란자 균형을 통한 인과정규화된 로지스틱 회귀 개선</div>
+            <div class="authors"><span class="me">Seokin Seo</span>, HyeongJoo Hwang, Hongseok Yang, Kee-Eung Kim</div>
+            <div class="meta">
+              <span class="full">Korea Software Congress (KSC), 2022</span>
+              <span class="award prize">Best Presentation Paper Award</span>
+              <span class="plinks"><a href="https://ailab.kaist.ac.kr/papers/pdfs/KCC2022-1.pdf">PDF</a></span>
+            </div>
+            <div class="kws"><button class="kw kw-causal" data-f="causal" type="button">Causal Learning</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="year-group">
+      <div class="year">2019</div>
+      <div class="year-items">
+        <article class="pub" data-k="">
+          <div>
+            <div class="pub-title"><a href="https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE09301454">Variational Recurrent Neural Networks with Relational Memory Core Architectures</a></div>
+            <div class="authors" lang="ko">관계적 메모리 코어 구조를 적용한 변분적 순환신경망</div>
+            <div class="authors">Geon-Hyeong Kim, <span class="me">Seokin Seo</span>, Shinhyung Kim, Kee-Eung Kim</div>
+            <div class="meta">
+              <span class="full">Korea Computer Congress (KCC), 2019</span>
+              <span class="plinks"><a href="https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE09301454">DBpia</a></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="awards">
+    <div class="two">
+      <div>
+        <h2>Awards</h2>
+        <ul class="plain">
+          <li><span>Gold Reviewer Award, ICML</span><span class="yr">Jul. 2026</span></li>
+          <li><span>Outstanding Paper Award, Korea Software Congress (KSC)</span><span class="yr">Feb. 2023</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Academic Talks</h2>
+        <ul class="plain talks">
+          <li><span><i>Robust and Safe Offline Imitation Learning via Distribution Matching</i><br><small><a href="https://swan0421.github.io/lmt-workshop/2026/2nd/" target="_blank" rel="noopener">Locomotion and Manipulation Technology Workshop</a>, Korea University</small></span><span class="yr">2026</span></li>
+          <li><span><i>Mitigating Covariate Shift in Behavioral Cloning via Robust Distribution Correction Estimation</i><br><small>AI Tutorial Series, KAIST</small></span><span class="yr">2025</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="service">
+    <div class="two">
+      <div>
+        <h2>Academic Service</h2>
+        <ul class="plain">
+          <li><span>Reviewer, NeurIPS</span><span class="yr">2021, 2024, 2026</span></li>
+          <li><span>Reviewer, ICML</span><span class="yr">2025, 2026 <span class="gold" title="ICML 2026 Gold Reviewer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 16.8 6.1 20l1.3-6.5L2.5 8.9l6.6-.8z"/></svg>Gold Reviewer</span></span></li>
+          <li><span>Reviewer, ICLR</span><span class="yr">2025, 2026</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Teaching Experience</h2>
+        <ul class="plain">
+          <li><span>Guest Lecturer, Mathematics for AI (AI503), KAIST<br><small>Lecture: <i>Distribution Shift in Imitation Learning</i></small></span><span class="yr">Fall 2025</span></li>
+          <li><span>TA, Introduction to Reinforcement Learning, KAIST Machine Learning Engineer Bootcamp</span><span class="yr">2022</span></li>
+          <li><span>TA, Mathematics for AI (AI503), KAIST</span><span class="yr">Fall 2021</span></li>
+          <li><span>TA, Dialogue System, KAIST–Samsung DS AI Expert Program</span><span class="yr">2020</span></li>
+          <li><span>TA, Machine Learning (CS376), KAIST</span><span class="yr">Fall 2019</span></li>
+          <li><span>TA, Data Structure (CS206), KAIST</span><span class="yr">Spring/Fall 2018</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="addr">
+      <b>Korea Institute of Science and Technology (KIST)</b><br>
+      L8425, 5 Hwarang-ro 14-gil, Seongbuk-gu, Seoul, Republic of Korea<br>
+      <span lang="ko">한국과학기술연구원 국제협력관 L8425, 서울특별시 성북구 화랑로14길 5</span>
+    </div>
+    <div class="copy">© <span id="yr"></span> Seokin Seo · Last updated October 2026</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, KEY='theme';
+  try{var s=localStorage.getItem(KEY); if(s) root.setAttribute('data-theme',s);}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme') ||
+      (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var btns=document.querySelectorAll('.filters button');
+  function apply(f){
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.f===f)});
+    document.querySelectorAll('.pub').forEach(function(p){
+      var k=(p.dataset.k||'').split(' ');
+      p.classList.toggle('hidden', f!=='all' && k.indexOf(f)<0);
+    });
+    document.querySelectorAll('.year-group').forEach(function(g){
+      g.classList.toggle('hidden', !g.querySelector('.pub:not(.hidden)'));
+    });
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.f)})});
+  document.querySelectorAll('.kw').forEach(function(t){t.addEventListener('click',function(){
+    var on=document.querySelector('.filters button[data-f="'+t.dataset.f+'"]').getAttribute('aria-pressed')==='true';
+    apply(on?'all':t.dataset.f);
+    document.getElementById('publications').scrollIntoView();
+  })});
+})();
+</script>
+</body>
+</html>
