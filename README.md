@@ -13,6 +13,6 @@ Personal academic homepage of Seokin Seo. Static HTML, no build step.
 
 ## Customize
 - Profile photo: save as `assets/profile.jpg` (square, >= 400x400).
-- CV: optionally place `assets/cv.pdf` and point the CV button to it.
+- CV: replace `assets/cv.pdf` with the latest PDF and push (the CV button links to it).
 - New paper: copy one `<article class="pub">` block; `data-k` controls filters
   (il, rl, nlp, robust, causal, mv, diff, safety, sel = Selected).
